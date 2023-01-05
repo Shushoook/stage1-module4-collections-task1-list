@@ -5,14 +5,13 @@ import java.util.List;
 
 public class LinkedListCreator {
     public LinkedList<Integer> createLinkedList(List<Integer> sourceList) {
-        LinkedList<Integer> odd = new LinkedList<>();
-        for (int i = 0; i < sourceList.size(); i++) {
-            if (i % 2 != 0) {
-                odd.add(0, i);
-            } else {
-                odd.add(sourceList.size() - 1, i);
-            }
+        LinkedList<Integer> list = new LinkedList<>();
+        for (Integer integer : sourceList) {
+            if (integer % 2 == 0)
+                list.add(integer);
+            else
+                list.addFirst(integer);
         }
-        return odd;
+        return list;
     }
 }
